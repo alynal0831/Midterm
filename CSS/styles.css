@@ -1,0 +1,132 @@
+/* Main stylesheet for RealHome Realty site */
+
+/* Element selectors (used multiple times) */
+body {
+	font-family: Arial, Helvetica, sans-serif; /* required: change body font to Arial */
+	font-size: 1em; /* required */
+	color: #333333; /* not black */
+	background-color: #e8f0f8; /* body background (different than page) */
+	margin: 0;
+	padding: 20px;
+}
+
+header {
+	border-bottom: 4px solid #d0e6f8;
+	padding: 10px 20px;
+}
+
+nav {
+	background-color: #f6fbff; /* page background different than body */
+	padding: 10px 20px;
+	margin-top: 10px;
+}
+
+/* Page container: 1000px wide and centered */
+#wrapper {
+	width: 1000px; /* required */
+	margin: 0 auto; /* center the page */
+	background-color: #ffffff; /* page bg different from body */
+	padding: 20px;
+	box-shadow: 0 0 8px rgba(0,0,0,0.06);
+}
+
+/* ID selector examples */
+#logo {
+	display: block; /* center the logo */
+	margin: 0 auto 10px auto; /* center and add bottom spacing */
+	max-width: 100%; /* ensure it scales inside the wrapper */
+}
+
+#site-title {
+	display: inline-block;
+	margin-left: 12px;
+	vertical-align: middle;
+}
+
+/* Class selectors */
+.agent, .listing, .location {
+	border: 1px solid #e6eef5;
+	padding: 12px;
+	margin-bottom: 12px;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.agent img, .listing img, .location img {
+	width: 120px;
+	height: 90px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+.card-body {
+	flex: 1;
+}
+
+.center {
+	text-align: center;
+}
+
+/* Links styling (required) */
+a {
+	color: #7a2b5a; /* not blue */
+	text-decoration: none; /* no underline */
+}
+
+a:hover {
+	color: #2b7a5a; /* different color on hover */
+	text-decoration: underline; /* show underline on hover */
+}
+
+/* Navigation list */
+nav ul {
+	list-style: none; /* element selector used */
+	padding: 0;
+	margin: 0;
+	display: flex;
+	gap: 18px;
+}
+
+nav li {
+	display: inline-block;
+}
+
+/* Aside styling */
+aside {
+	background:#fbfdff;
+	padding:12px;
+	margin-top:12px;
+}
+
+/* Article/section spacing */
+article, section {
+	margin-bottom: 16px;
+}
+
+footer {
+	border-top: 1px solid #e6eef5;
+	padding-top: 10px;
+	margin-top: 20px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #e6eef5;
+	margin: 18px 0;
+}
+
+/* small utility */
+.muted {
+	color: #666;
+	font-size: 0.9em;
+}
+
+/* make images responsive inside content */
+img.responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ensure at least 2 instances of element, id and class selectors are used across pages */
