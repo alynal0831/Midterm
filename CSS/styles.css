@@ -1,11 +1,8 @@
-/* Main stylesheet for RealHome Realty site */
-
-/* Element selectors (used multiple times) */
 body {
-	font-family: Arial, Helvetica, sans-serif; /* required: change body font to Arial */
-	font-size: 1em; /* required */
-	color: #333333; /* not black */
-	background-color: #e8f0f8; /* body background (different than page) */
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 1em; 
+	color: #333333; 
+	background-color: #e8f0f8;
 	margin: 0;
 	padding: 20px;
 }
@@ -16,25 +13,25 @@ header {
 }
 
 nav {
-	background-color: #f6fbff; /* page background different than body */
+	background-color: #f6fbff; 
 	padding: 10px 20px;
 	margin-top: 10px;
 }
 
 /* Page container: 1000px wide and centered */
 #wrapper {
-	width: 1000px; /* required */
-	margin: 0 auto; /* center the page */
-	background-color: #ffffff; /* page bg different from body */
+	width: 1000px; 
+	margin: 0 auto; 
+	background-color: #ffffff; 
 	padding: 20px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.06);
 }
 
-/* ID selector examples */
+/* ID selectors */
 #logo {
-	display: block; /* center the logo */
-	margin: 0 auto 10px auto; /* center and add bottom spacing */
-	max-width: 100%; /* ensure it scales inside the wrapper */
+	display: block; 
+	margin: 0 auto 10px auto; 
+	max-width: 100%; 
 }
 
 #site-title {
@@ -70,18 +67,18 @@ nav {
 
 /* Links styling (required) */
 a {
-	color: #7a2b5a; /* not blue */
-	text-decoration: none; /* no underline */
+	color: #7a2b5a; 
+	text-decoration: none; 
 }
 
 a:hover {
-	color: #2b7a5a; /* different color on hover */
-	text-decoration: underline; /* show underline on hover */
+	color: #2b7a5a; 
+	text-decoration: underline; 
 }
 
 /* Navigation list */
 nav ul {
-	list-style: none; /* element selector used */
+	list-style: none; 
 	padding: 0;
 	margin: 0;
 	display: flex;
@@ -123,10 +120,53 @@ hr {
 	font-size: 0.9em;
 }
 
-/* make images responsive inside content */
 img.responsive {
 	max-width: 100%;
 	height: auto;
 }
 
-/* ensure at least 2 instances of element, id and class selectors are used across pages */
+.listing img,
+.agent img,
+.intro img,
+img.responsive {
+	transition: transform 180ms ease, box-shadow 180ms ease;
+	will-change: transform;
+}
+
+.listing img:hover,
+.agent img:hover,
+.intro img:hover,
+img.responsive:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+	z-index: 2; 
+}
+
+.intro {
+
+	overflow: auto;
+}
+
+
+.intro img,
+.float-left {
+	float: left;
+	margin: 0 16px 12px 0;
+	border-radius: 6px;
+}
+
+/* limit float-left width when necessary; keep intro image at a known size */
+.intro img { width: 200px; }
+.float-left { max-width: 60%; }
+
+@media (max-width: 700px) {
+	.intro img,
+	.float-left {
+		float: none;
+		display: block;
+		margin: 0 auto 12px auto;
+		width: 100%;
+		max-width: 400px;
+	}
+}
+
