@@ -150,32 +150,3 @@ ul li {
   margin-bottom: 6px;
 }
 
-/* === Responsive Flex Behavior === */
-@media (max-width: 900px) {
-  #wrapper {
-    width: 95%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .intro,
-  .agent,
-  .listing,
-  .location {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .intro img,
-  .agent img,
-  .listing img,
-  .location img {
-    width: 100%;
-    height: auto;
-  }
-}
-
