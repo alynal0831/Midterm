@@ -1,172 +1,181 @@
+/* FLEXBOX THEME STYLESHEET for RealHome Realty */
+
+/* === Base styles === */
 body {
-	font-family: Arial, Helvetica, sans-serif; 
-	font-size: 1em; 
-	color: #333333; 
-	background-color: #e8f0f8;
-	margin: 0;
-	padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: #333;
+  background-color: #e8f0f8;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-header {
-	border-bottom: 4px solid #d0e6f8;
-	padding: 10px 20px;
-}
-
-nav {
-	background-color: #f6fbff; 
-	padding: 10px 20px;
-	margin-top: 10px;
-}
-
-/* Page container: 1000px wide and centered */
+/* Wrapper centered at 1000px */
 #wrapper {
-	width: 1000px; 
-	margin: 0 auto; 
-	background-color: #ffffff; 
-	padding: 20px;
-	box-shadow: 0 0 8px rgba(0,0,0,0.06);
+  width: 1000px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 6px;
 }
 
-/* ID selectors */
+/* === Header === */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 4px solid #d0e6f8;
+  padding: 10px 0;
+}
+
 #logo {
-	display: block; 
-	margin: 0 auto 10px auto; 
-	max-width: 100%; 
+  max-width: 100%;
+  height: auto;
 }
 
 #site-title {
-	display: inline-block;
-	margin-left: 12px;
-	vertical-align: middle;
+  margin: 10px 0;
+  color: #2b4f7a;
 }
 
-/* Class selectors */
-.agent, .listing, .location {
-	border: 1px solid #e6eef5;
-	padding: 12px;
-	margin-bottom: 12px;
-	display: flex;
-	gap: 12px;
-	align-items: center;
+/* === Navigation === */
+nav {
+  background-color: #f6fbff;
+  border-bottom: 1px solid #e6eef5;
 }
 
-.agent img, .listing img, .location img {
-	width: 120px;
-	height: 90px;
-	object-fit: cover;
-	border-radius: 6px;
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #7a2b5a;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: #2b7a5a;
+  text-decoration: underline;
+}
+
+/* === Main Layout === */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Flex layout for intro sections, agents, listings */
+.intro,
+.agent,
+.listing,
+.location {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #fbfdff;
+  border: 1px solid #e6eef5;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.intro img,
+.agent img,
+.listing img,
+.location img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .card-body {
-	flex: 1;
+  flex: 1;
 }
 
-.center {
-	text-align: center;
-}
-
-/* Links styling (required) */
-a {
-	color: #7a2b5a; 
-	text-decoration: none; 
-}
-
-a:hover {
-	color: #2b7a5a; 
-	text-decoration: underline; 
-}
-
-/* Navigation list */
-nav ul {
-	list-style: none; 
-	padding: 0;
-	margin: 0;
-	display: flex;
-	gap: 18px;
-}
-
-nav li {
-	display: inline-block;
-}
-
-/* Aside styling */
+/* === Sidebar/Aside === */
 aside {
-	background:#fbfdff;
-	padding:12px;
-	margin-top:12px;
+  background-color: #f9fcff;
+  border-left: 4px solid #d0e6f8;
+  padding: 16px;
+  margin-top: 16px;
 }
 
-/* Article/section spacing */
-article, section {
-	margin-bottom: 16px;
-}
-
+/* === Footer === */
 footer {
-	border-top: 1px solid #e6eef5;
-	padding-top: 10px;
-	margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #e6eef5;
+  padding: 12px;
+  background-color: #f6fbff;
 }
 
-hr {
-	border: 0;
-	height: 1px;
-	background: #e6eef5;
-	margin: 18px 0;
+footer a {
+  color: #7a2b5a;
+  text-decoration: none;
 }
 
-/* small utility */
+footer a:hover {
+  color: #2b7a5a;
+  text-decoration: underline;
+}
+
+/* === Utility and typography === */
+h1, h2, h3, h4 {
+  color: #2b4f7a;
+}
+
+p {
+  line-height: 1.5;
+}
+
 .muted {
-	color: #666;
-	font-size: 0.9em;
+  color: #666;
+  font-size: 0.9em;
 }
 
-img.responsive {
-	max-width: 100%;
-	height: auto;
+ul li {
+  margin-bottom: 6px;
 }
 
-.listing img,
-.agent img,
-.intro img,
-img.responsive {
-	transition: transform 180ms ease, box-shadow 180ms ease;
-	will-change: transform;
-}
+/* === Responsive Flex Behavior === */
+@media (max-width: 900px) {
+  #wrapper {
+    width: 95%;
+  }
 
-.listing img:hover,
-.agent img:hover,
-.intro img:hover,
-img.responsive:hover {
-	transform: scale(1.05);
-	box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-	z-index: 2; 
-}
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.intro {
+  .intro,
+  .agent,
+  .listing,
+  .location {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-	overflow: auto;
-}
-
-
-.intro img,
-.float-left {
-	float: left;
-	margin: 0 16px 12px 0;
-	border-radius: 6px;
-}
-
-/* limit float-left width when necessary; keep intro image at a known size */
-.intro img { width: 200px; }
-.float-left { max-width: 60%; }
-
-@media (max-width: 700px) {
-	.intro img,
-	.float-left {
-		float: none;
-		display: block;
-		margin: 0 auto 12px auto;
-		width: 100%;
-		max-width: 400px;
-	}
+  .intro img,
+  .agent img,
+  .listing img,
+  .location img {
+    width: 100%;
+    height: auto;
+  }
 }
 
